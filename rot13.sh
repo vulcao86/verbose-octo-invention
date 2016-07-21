@@ -19,4 +19,5 @@ do
 	nazwa="$linia"
 	tr '[A-Za-z]''[N-ZA-Mn-za-m]'
 done < "$nazwa_pliku"
+echo "blablabla"
 
