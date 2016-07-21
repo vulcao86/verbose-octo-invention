@@ -5,22 +5,26 @@
 # wersja 1.0a
 #
 #
-///////////////////////////// mozliwe parametry wykonania //////////////////
+# ///////////////////////////// mozliwe parametry wykonania //////////////////
 
 while getopts ':ihv:' wybor; do
-	case $wybor in
+        case $wybor in
 	i)
 		echo "Wyświetlam informacje o działaniu programu"
 		echo "Program służy do kodowania tekstu dwiema różnymi metodami"
 		echo "wybrane metody wybieramy po uruchomieniu programu "
-		exit
+		exit 0
+		;;
+	d)
+		echo "opcja testowa"
+		exit 0
 		;;
 	h)
 		echo "wyświetlam pomoc"
 		echo "Po uruchomienie programu należy wybrać metodę kodowania pliku"
 		echo "Następnie należy podać nazwę pliku, który ma być zakodowany"
 		echo "plik wynikowy zostanie zapisany pod nazwą pliku wejściowego z dodaną końcówą \".zak\""
-		exit 
+		exit 0
 		;;	
 	v)
 		echo "Wyświetlam informacje o historii wersji"
@@ -37,7 +41,7 @@ while getopts ':ihv:' wybor; do
 		echo "2.dodanie więcej metod kodowania"
 		echo "3.deszyfrowanie?"
 		echo "================================="
-		exit 
+		exit 0
 		;;
 	\?)	
 		echo "Podałeś nieprawidłowy parametr"
@@ -83,8 +87,8 @@ echo
 read ODP 					# wczytujemy odpowiedź od użytkownika
 	case $ODP in
 
-		1) 	echo "wybrałeś szyfrowanie ROT13, odpalam skrypt szyfrujący";./ROT13.sh;; # odpalamy szyfrowanie ROT13 z pliku
-		2)	echo "szyfrowanie zamiana_znakow";./kodowanie_ZAMIANA.sh;; #odpalamy kodowanie ZAMIANA_ZNAKOW z innego pliku
+		1) 	echo "wybrałeś szyfrowanie ROT13, odpalam skrypt szyfrujący";./rot13.sh;; # odpalamy szyfrowanie ROT13 z pliku
+		2)	echo "szyfrowanie zamiana_znakow";./kodowanie_zamiana.sh;; #odpalamy kodowanie ZAMIANA_ZNAKOW z innego pliku
 		3) 	echo "Podano 'nie'"
 			echo "koniec"
 
