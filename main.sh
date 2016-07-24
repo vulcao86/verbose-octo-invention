@@ -7,7 +7,7 @@
 #
 # ///////////////////////////// mozliwe parametry wykonania //////////////////
 
-while getopts ':ihv:' wybor; do
+while getopts ':dihv:' wybor; do
         case $wybor in
 	i)
 		echo "Wyświetlam informacje o działaniu programu"
@@ -17,6 +17,10 @@ while getopts ':ihv:' wybor; do
 		;;
 	d)
 		echo "opcja testowa"
+		echo "niespodzianka"
+		cat dane.txt
+		echo "ktoś podejrzał dane" >> log.txt
+		echo date >> log.txt
 		exit 0
 		;;
 	h)
@@ -25,7 +29,7 @@ while getopts ':ihv:' wybor; do
 		echo "Następnie należy podać nazwę pliku, który ma być zakodowany"
 		echo "plik wynikowy zostanie zapisany pod nazwą pliku wejściowego z dodaną końcówą \".zak\""
 		exit 0
-		;;	
+		;;
 	v)
 		echo "Wyświetlam informacje o historii wersji"
 		echo
@@ -34,7 +38,7 @@ while getopts ':ihv:' wybor; do
 		echo "Wersja 1.0"
 		echo "================================="
 		echo "powitanie"
-		echo "dodanie dokumentacji" 
+		echo "dodanie dokumentacji"
 		echo "dodanie funkcji odpowiedzialnych za wywołanie kodowania"
 		echo "TASKS TODO"
 		echo "1.zenity?"
@@ -43,13 +47,16 @@ while getopts ':ihv:' wybor; do
 		echo "================================="
 		exit 0
 		;;
-	\?)	
+	x)	echo
+		exit 0
+		;;
+	\?)
 		echo "Podałeś nieprawidłowy parametr"
 		exit 1
 		;;
 	esac
 done
-# /////////////////////////////////////////////////main programu////////////////////	
+# /////////////////////////////////////////////////main programu////////////////
 echo "========================================="
 echo "|				         |"
 echo "|					 |"
@@ -70,8 +77,8 @@ echo	" -v wyświetla informacje  wersji"
 echo
 echo
 echo  "uruchomić kodowanie?"
-echo  "1 - tak, metoda ROT13" 
-echo  "2 - tak, metodą zmiana znaków" 
+echo  "1 - tak, metoda ROT13"
+echo  "2 - tak, metodą zmiana znaków"
 echo  "3 - nie, koniec programu"
 echo
 echo

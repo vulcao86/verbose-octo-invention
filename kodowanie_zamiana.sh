@@ -10,3 +10,6 @@ echo "$WEJSCIE" >> dane.txt # zapisz do pliku
 echo
 echo "tekst do zakodowania zapisany w pliku dane.txt" # poinformuj użytkownika co się sało"
 echo
+echo "kodowanie tekstu"
+cat dane.txt | sed -e  "s/[aeio]/u/g" >> zakodowane.txt
+echo
