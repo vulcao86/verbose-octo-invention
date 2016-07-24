@@ -1,12 +1,12 @@
 #!/bin/bash
 echo "uruchomiłeś kodowanie metodą zamiany znaków"
 echo
-echo "podaj nazwę pliku do zakodowania"
+echo "podaj tekst do zakodowania:"
 echo
-read $WEJSCIE
+read WEJSCIE # pobierz dane od użytkownika
 echo
-sleep 2
-echo $WEJSCIE
+sleep 1 # czekaj chwile
+echo "$WEJSCIE" >> dane.txt # zapisz do pliku
 echo
-echo "plik wynikowy zapisany w $WEJSCIE"
+echo "tekst do zakodowania zapisany w pliku dane.txt" # poinformuj użytkownika co się sało"
 echo
